@@ -1,0 +1,287 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
+        <a href="#" class="navbar-brand d-flex d-lg-none">
+            <h1 class="m-0 display-4 text-secondary"><span class="text-white">Yangiyo'l</span>Agrostar</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto py-0">
+                <a href="{% url 'home' %}" class="nav-item nav-link active">Asosiy</a>
+                <a href="#biz-haqimizda" class="nav-item nav-link">Biz haqimizda</a>
+                <a href="#services" class="nav-item nav-link">Xizmatlar</a>
+                <a href="#afazlliklar" class="nav-item nav-link">Afzalliklar</a>
+                <a href="#products" class="nav-item nav-link">Mahsulotlar</a>
+                <a href="{% url 'news_list' %}" class="nav-item nav-link">Yangiliklar</a>
+                <a href="#contact" class="nav-item nav-link">Bog'lanish</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {% for home_back in home_background %}
+                    <div class="carousel-item active">
+                        <img class="w-100" src="{{ home_back.image.url }}" alt="Image">
+                        <div class="carousel-caption top-0 bottom-0 start-0 end-0 d-flex flex-column align-items-center justify-content-center">
+                            <div class="text-start p-5" style="max-width: 900px;">
+                                <h1 class="display-1 text-white mb-md-4">{{ home_back.title }}</h1>
+                                <a href="{{ home_back.button_link }}" class="btn btn-primary py-md-3 px-md-5 me-3">{{ home_back.button_name }}</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Oldingi</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Keyingi</span>
+            </button>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+    <!-- About Start -->
+    <div id="biz-haqimizda" class="container-fluid about pt-5">
+        <div class="container">
+            {% for h in home_about_us %}
+                <div class="row gx-5">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <div class="d-flex border border-5 border-primary border-bottom-0">
+                            <img class="img-fluid mt-auto mx-auto" src="{{ h.image.url }}">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 pb-5">
+                        <div class="mb-3 pb-2">
+                            <h1 class="display-5">{{ h.title }}</h1>
+                        </div>
+                        <p class="mb-4">{{ h.more_info }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- About End -->
+    
+
+    <!-- Services Start -->
+    <div id="services" class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="mb-3">
+                        <h6 class="text-primary text-uppercase">Bizning xizmatlar</h6>
+                        <h1 class="display-5">Biz taklif qiladigan xizmatlar</h1>
+                    </div>
+                    <p class="mb-4">Dehqon va fermerlar uchun urug‘, o‘g‘it, ko‘chat hamda agrotexnik maslahatlar taqdim etamiz.
+                        Mahsulotlarni yig‘ib olish, muzlatish, qadoqlash va eksportga tayyorlashda to‘liq ko‘mak beramiz.
+                        Imtiyozli kreditlar, malakali agronomlar yordami va barqaror sotuv bozorlari bilan ta’minlaymiz.</p>
+                    <a href="#" class="btn btn-primary py-md-3 px-md-5">Bog'lanish</a>
+                </div>
+                {% for s in services %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-item bg-light text-center p-5">
+                            <i class="fa fa-{{s.classname}} display-1 text-primary mb-3"></i>
+                            <h4>{{ s.title }}</h4>
+                            <p class="mb-0">{{ s.more_info }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
+
+    <!-- Features Start -->
+    <div class="container-fluid bg-primary feature py-5 pb-lg-0 my-5">
+        <div id="afazlliklar" class="container py-5 pb-lg-0">
+            <div class="mx-auto text-center mb-3 pb-2" style="max-width: 500px;">
+                <h6 class="text-uppercase text-secondary">Afzalliklarimiz</h6>
+                <h1 class="display-5 text-white">Bizning ustunliklarimiz</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-3">
+                    <div class="text-white mb-5">
+                        <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fa fa-seedling fs-4 text-white"></i>
+                        </div>
+                        <h4 class="text-white">Sifatli ko‘chat va urug‘lar</h4>
+                        <p class="mb-0">Eksportbop navlar bilan ta’minlaymiz.
+                            Iqlimga mos tanlovlar agronomlar tavsiyasi asosida.
+                            O‘z vaqtida yetkazib berish kafolatlanadi.</p>
+                    </div>
+                    <div class="text-white">
+                        <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fa fa-award fs-4 text-white"></i>
+                        </div>
+                        <h4 class="text-white">Ishonchli hamkorlik</h4>
+                        <p class="mb-0">Fermerlar bilan tizimli hamkorlik yo‘lga qo‘yilgan.
+                            Ko‘p yillik tajribaga ega mutaxassislar jamoasi.
+                            Natijadorlik va barqarorlikni birinchi o‘ringa qo‘yamiz.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="d-block bg-white h-100 text-center p-5 pb-lg-0">
+                        <p>Yangiyo‘l-Agro Star” kompaniyasi dehqonlar bilan bevosita ishlaydi, agrotexnologiyalarni joriy qiladi va xalqaro talabga javob beradigan mahsulotlarni yetishtirishga kafolat beradi. Har bir bosqichda sifat, nazorat va tajriba asosida harakat qilamiz. Biz fermerlar ishonchini va xalqaro bozorlar talabini birlashtiruvchi agroplatformamiz.</p>
+                        <img style="border-radius: 20px;" class="img-fluid" src="{% static 'img/afzalliklar.jpeg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="text-white mb-5">
+                        <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fa fa-tractor fs-4 text-white"></i>
+                        </div>
+                        <h4 class="text-white">Zamonaviy agrotexnologiyalar</h4>
+                        <p class="mb-0">Issiqxonalar, quyosh panellari va tomchilab sug‘orish kabi innovatsiyalar joriy qilinmoqda.
+                           </p>
+                    </div>
+                    <div class="text-white">
+                        <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fa fa-phone-alt fs-4 text-white"></i>
+                        </div>
+                        <h4 class="text-white">Agroxizmat va maslahat</h4>
+                        <p class="mb-0">Mahalliy agronomlar doimiy maslahat beradi.
+                            Parvarish va himoya bo‘yicha amaliy ko‘mak mavjud.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features Start -->
+
+
+    <!-- Products Start -->
+    <div id="products" class="container-fluid py-5">
+        <div class="container">
+            <div class="mx-auto text-center mb-5" style="max-width: 500px;">
+                <h6 class="text-primary text-uppercase">Mahsulotlar</h6>
+                <h1 class="display-5">Bizning mahsulotlarimiz</h1>
+            </div>
+            <div class="owl-carousel product-carousel px-5">
+
+                {% for i in products %}
+                    <div class="pb-5">
+                        <div class="product-item position-relative bg-white d-flex flex-column text-center">
+                            <img style="object-fit: contain; height: 128px;" class="img-fluid mb-4" src="{{ i.image.url }}" alt="">
+                            <h6 class="mb-3">{{ i.title }}</h6>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <!-- Products End -->
+
+    <!-- Team Start -->
+     {% if workers %}
+        <div class="container-fluid py-5">
+            <div class="container">
+                <div class="mx-auto text-center mb-5" style="max-width: 500px;">
+                    <h6 class="text-primary text-uppercase">Jamoa</h6>
+                    <h1 class="display-5">Bizning jamoamiz</h1>
+                </div>
+                <div class="row g-5">
+                    {% for i in workers %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="row g-0">
+                            <div class="col-10">
+                                <div class="position-relative">
+                                    <img class="img-fluid w-100" src="{{ i.image.url }}" alt="">
+                                    <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4" style="background: rgba(52, 173, 84, .85);">
+                                        <h4 class="text-white">{{ i.name }}</h4>
+                                        <span class="text-white">{{ i.position }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <!-- Team End -->
+
+
+    <!-- Blog Start -->
+    <div id="news" class="container-fluid py-5">
+        <div class="container">
+            <div class="mx-auto text-center mb-5" style="max-width: 500px;">
+                <h6 class="text-primary text-uppercase">Yangiliklar</h6>
+                <h1 class="display-5">Kompaniyamiz haqida oxirgi yangiliklar</h1>
+            </div>
+            <div class="row g-5">
+                {% for n in news %}
+                <div class="col-lg-4">
+                    <div class="blog-item position-relative overflow-hidden">
+                        <img style="height: 400px;" class="img-fluid" src="{{ n.image.url }}" alt="">
+                        <a class="blog-overlay" href="">
+                            <h4 class="text-white">{{ n.title }}</h4>
+                            <span class="text-white fw-bold">{{ n.created|date:"d.m.Y" }}</span>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+    
+
+    <!-- Footer Start -->
+    <div class="container my-5" id="contact">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <h3>Biz bilan bog‘laning</h3>
+            <p><strong>Manzil:</strong> Toshkent viloyati, Yangiyo‘l tumani, Gulbahor MFY, Sharof Rashidov ko‘chasi 1-uy</p>
+            <p><strong>Telefon:</strong> <a href="tel:+998976095362">+998 97 609 53 62</a></p>
+            <div style="width: 100%; height: 250px; background: #e9ecef; text-align: center; display: flex; align-items: center; justify-content: center;">
+              <small>Google Map bu yerga qo‘yiladi</small>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h4>Bizga xabar yuboring</h4>
+            <form method="POST">
+              {% csrf_token %}
+              {{ form.non_field_errors }}
+              <div class="mb-3">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+              </div>
+              <div class="mb-3">
+                {{ form.phone_number.label_tag }}
+                {{ form.phone_number }}
+              </div>
+              <div class="mb-3">
+                {{ form.text.label_tag }}
+                {{ form.text }}
+              </div>
+              <button type="submit" class="btn btn-primary">Yuborish</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+{% endblock content %}
