@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware', # i18n
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -113,32 +114,20 @@ USE_I18N = True
 
 USE_TZ = True
 
+USE_L10N = True
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS  = [ BASE_DIR / 'static' ]
-# STATIC_ROOT = BASE_DIR / 'static'
+# STATICFILES_DIRS  = [ BASE_DIR / 'static' ]
+STATIC_ROOT = BASE_DIR / 'static'
 
 MEDIA_URL = 'medi/'
-# MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# LANGUAGE_CODE = 'uz'
-
-# LANGUAGES = [
-#     ('uz', 'O‘zbekcha'),
-#     ('ru', 'Русский'),
-#     ('en', 'English'),
-# ]
-
-# USE_I18N = True
-
-# LOCALE_PATHS = [
-#     BASE_DIR / 'locale',
-# ]
