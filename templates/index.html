@@ -231,7 +231,7 @@
                 <div class="col-lg-4">
                     <div class="blog-item position-relative overflow-hidden">
                         <img style="height: 400px;" class="img-fluid" src="{{ n.image }}" alt="">
-                        <a class="blog-overlay" href="">
+                        <a class="blog-overlay" href="{% url 'news_detail' n.slug %}">
                             <h4 class="text-white">{{ n.title }}</h4>
                             <span class="text-white fw-bold">{{ n.created|date:"d.m.Y" }}</span>
                         </a>
