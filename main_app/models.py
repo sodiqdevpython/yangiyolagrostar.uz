@@ -5,7 +5,7 @@ class HomeBackground(models.Model):
     title = models.CharField(max_length=64, verbose_name='Sarlavha')
     button_name = models.CharField(max_length=32, verbose_name="Tugma nomi")
     button_link = models.URLField(verbose_name="Tugma uchun manzil")
-    image = models.ImageField(upload_to='media/backgrounds', verbose_name="Orqa fon rasmi")
+    image = models.ImageField(upload_to='backgrounds', verbose_name="Orqa fon rasmi")
 
     def __str__(self):
         return str(self.title)
@@ -15,7 +15,7 @@ class HomeBackground(models.Model):
         verbose_name_plural = "Asosiy orqa fonlar"
 
 class HomeAboutUs(models.Model):
-    image = models.ImageField(upload_to='media/about-us', verbose_name='Rasm')
+    image = models.ImageField(upload_to='about-us', verbose_name='Rasm')
     title = models.CharField(max_length=64, verbose_name='Sarlavha')
     more_info = models.TextField(verbose_name="Ko'proq ma'lumot")
 
@@ -42,7 +42,7 @@ class Products(models.Model):
     title = models.CharField(max_length=128, verbose_name="Mahsulot", unique=True)
     slug = models.SlugField(unique=True, verbose_name="Slug buni yozmang o'zi yozadi")
     text = models.TextField(verbose_name="Ko'proq ma'lumot")
-    image = models.ImageField(upload_to='media/products', verbose_name='Rasm')
+    image = models.ImageField(upload_to='products', verbose_name='Rasm')
 
     def __str__(self):
         return str(self.title)
@@ -54,7 +54,7 @@ class Products(models.Model):
 class Worker(models.Model):
     name = models.CharField(max_length=64, verbose_name="Xodimning ism, familiyasi")
     position = models.CharField(max_length=64, verbose_name="Xodimning lavozimi")    
-    image = models.ImageField(upload_to='media/employe', verbose_name="Xodimning rasmi")
+    image = models.ImageField(upload_to='employe', verbose_name="Xodimning rasmi")
 
     def __str__(self):
         return str(self.name)
@@ -67,7 +67,7 @@ class News(models.Model):
     title = models.CharField(verbose_name="Sarlavha", max_length=256, unique=True)
     slug = models.SlugField(verbose_name="Slug buni yozmang o'zi yozadi", unique=True)
     text = models.TextField(verbose_name="Yangilik haqida to'liq shu yerda yozing")
-    image = models.ImageField(verbose_name="Yangilik rasmi", upload_to='media/image')
+    image = models.ImageField(verbose_name="Yangilik rasmi", upload_to='image')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)

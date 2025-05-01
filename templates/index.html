@@ -62,7 +62,7 @@
                 <div class="row gx-5">
                     <div class="col-lg-6 mb-5 mb-lg-0">
                         <div class="d-flex border border-5 border-primary border-bottom-0">
-                            <img class="img-fluid mt-auto mx-auto" src="{{ h.image.url }}">
+                            <img class="img-fluid mt-auto mx-auto" src="{{ h.image }}">
                         </div>
                     </div>
                     <div class="col-lg-6 pb-5">
@@ -177,7 +177,7 @@
                 {% for i in products %}
                     <div class="pb-5">
                         <div class="product-item position-relative bg-white d-flex flex-column text-center">
-                            <img style="object-fit: contain; height: 128px;" class="img-fluid mb-4" src="{{ i.image.url }}" alt="">
+                            <img style="object-fit: contain; height: 128px;" class="img-fluid mb-4" src="{{ i.image }}" alt="">
                             <h6 class="mb-3">{{ i.title }}</h6>
                         </div>
                     </div>
@@ -202,7 +202,7 @@
                         <div class="row g-0">
                             <div class="col-10">
                                 <div class="position-relative">
-                                    <img class="img-fluid w-100" src="{{ i.image.url }}" alt="">
+                                    <img class="img-fluid w-100" src="{{ i.image }}" alt="">
                                     <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4" style="background: rgba(52, 173, 84, .85);">
                                         <h4 class="text-white">{{ i.name }}</h4>
                                         <span class="text-white">{{ i.position }}</span>
@@ -230,7 +230,7 @@
                 {% for n in news %}
                 <div class="col-lg-4">
                     <div class="blog-item position-relative overflow-hidden">
-                        <img style="height: 400px;" class="img-fluid" src="{{ n.image.url }}" alt="">
+                        <img style="height: 400px;" class="img-fluid" src="{{ n.image }}" alt="">
                         <a class="blog-overlay" href="">
                             <h4 class="text-white">{{ n.title }}</h4>
                             <span class="text-white fw-bold">{{ n.created|date:"d.m.Y" }}</span>
