@@ -1,5 +1,8 @@
 from django.contrib import admin
-from .models import HomeBackground, HomeAboutUs, HomeServices, Products, Worker, News, Contact, Comment
+from .models import (
+    HomeBackground, HomeAboutUs, HomeServices,
+    Products, Worker, News, Contact, Comment, NewsImage
+)
 
 @admin.register(HomeBackground)
 class HomeBackgroundAdmin(admin.ModelAdmin):
@@ -12,15 +15,22 @@ class ProductsAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ['title']}
 
 @admin.register(Worker)
-class HomeBackgroundAdmin(admin.ModelAdmin):
+class WorkerAdmin(admin.ModelAdmin):  # ⚠️ oldingi nom noto‘g‘ri edi (HomeBackgroundAdmin)
     list_display = ['name', 'position']
     search_fields = ['name']
+
+class NewsImageInline(admin.TabularInline):
+    model = NewsImage
+    extra = 3  # 3 ta rasm joyi bo‘sh tursin
+    max_num = 10  # maksimal 10 ta rasm
+    fields = ['image']
 
 @admin.register(News)
 class NewsAdmin(admin.ModelAdmin):
     list_display = ('title', 'created', 'author')
-    search_fields = ['name', 'text']
+    search_fields = ['title', 'text']
     prepopulated_fields = {'slug': ('title',)}
+    inlines = [NewsImageInline]  # ⬅️ bu yerga inline qo‘shildi
 
 @admin.register(Contact)
 class ContactMessageAdmin(admin.ModelAdmin):
@@ -40,4 +50,3 @@ class CommentAdmin(admin.ModelAdmin):
 
 admin.site.register(HomeAboutUs)
 admin.site.register(HomeServices)
-

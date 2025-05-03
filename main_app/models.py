@@ -106,3 +106,11 @@ class Comment(models.Model):
         verbose_name = "Izoh"
         verbose_name_plural = "Izohlar"
         ordering = ['-created_at']
+    
+
+class NewsImage(models.Model):
+    news = models.ForeignKey(News, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to='news_images/')
+
+    def __str__(self):
+        return f"{self.news.title} - image"

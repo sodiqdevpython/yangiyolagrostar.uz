@@ -32,13 +32,32 @@
             {% blocktrans %}Nashr etilgan:{% endblocktrans %} {{ news.created|date:"d-m-Y" }}
           </small>
         </div>
-        <img src="{{ news.image.url }}" class="img-fluid rounded mb-4 shadow-sm" alt="{{ news.title }}">
+  
+        <!-- Asosiy rasm (agar bo‘lsa) -->
+        {% if news.image %}
+          <div class="mb-4">
+            <img src="{{ news.image.url }}" class="img-fluid rounded shadow-sm w-100" alt="{{ news.title }}">
+          </div>
+        {% endif %}
+  
+        <!-- Qo‘shimcha rasmlar -->
+        {% if news.images.all %}
+          <div class="row g-3 mb-4">
+            {% for image in news.images.all %}
+              <div class="col-md-6">
+                <img src="{{ image.image.url }}" class="img-fluid rounded shadow-sm w-100" alt="Rasm {{ forloop.counter }}">
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+  
         <div class="fs-5" style="line-height: 1.8;">
           {{ news.text|linebreaks }}
         </div>
       </article>
     </div>
   </div>
+  
 
   <!-- Izohlar -->
   <div class="row justify-content-center">
