@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'modeltranslation',
 
     # 'modeltranslation',
     'main_app',
@@ -116,6 +117,15 @@ USE_TZ = True
 
 USE_L10N = True
 
+from django.utils.translation import gettext_lazy as _
+
+LANGUAGES = [
+    ('uz', _("Uzbek")),
+    ('en', _("English")),
+    ('ru', _("Russian")),
+]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
@@ -126,6 +136,8 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+LOCALE_PATHS = BASE_DIR , 'locale'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

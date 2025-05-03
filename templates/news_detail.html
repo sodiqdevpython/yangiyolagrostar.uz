@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load i18n %}
 {% block content %}
 <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
     <a href="#" class="navbar-brand d-flex d-lg-none">
@@ -11,13 +11,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav mx-auto py-0">
-            <a href="{% url 'home' %}" class="nav-item nav-link active">Asosiy</a>
-            <a href="{% url 'home' %}" class="nav-item nav-link">Biz haqimizda</a>
-            <a href="{% url 'home' %}" class="nav-item nav-link">Xizmatlar</a>
-            <a href="{% url 'home' %}" class="nav-item nav-link">Afzalliklar</a>
-            <a href="{% url 'home' %}" class="nav-item nav-link">Mahsulotlar</a>
-            <a href="{% url 'news_list' %}" class="nav-item nav-link">Yangiliklar</a>
-            <a href="{% url 'home' %}" class="nav-item nav-link">Bog'lanish</a>
+            <a href="{% url 'home' %}" class="nav-item nav-link active">{% blocktrans %}Asosiy{% endblocktrans %}</a>
+            <a href="{% url 'home' %}" class="nav-item nav-link">{% blocktrans %}Biz haqimizda{% endblocktrans %}</a>
+            <a href="{% url 'home' %}" class="nav-item nav-link">{% blocktrans %}Xizmatlar{% endblocktrans %}</a>
+            <a href="{% url 'home' %}" class="nav-item nav-link">{% blocktrans %}Afzalliklar{% endblocktrans %}</a>
+            <a href="{% url 'home' %}" class="nav-item nav-link">{% blocktrans %}Mahsulotlar{% endblocktrans %}</a>
+            <a href="{% url 'news_list' %}" class="nav-item nav-link">{% blocktrans %}Yangiliklar{% endblocktrans %}</a>
+            <a href="{% url 'home' %}" class="nav-item nav-link">{% blocktrans %}Bog'lanish{% endblocktrans %}</a>
         </div>
     </div>
 </nav>
@@ -29,7 +29,7 @@
         <h2 class="mb-2 fw-bold">{{ news.title }}</h2>
         <div class="text-muted mb-3">
           <small>
-            Nashr etilgan: {{ news.created|date:"d-m-Y" }}{% if news.author %} | Muallif: {{ news.author.get_full_name }}{% endif %}
+            {% blocktrans %}Nashr etilgan:{% endblocktrans %} {{ news.created|date:"d-m-Y" }}
           </small>
         </div>
         <img src="{{ news.image.url }}" class="img-fluid rounded mb-4 shadow-sm" alt="{{ news.title }}">
@@ -43,7 +43,7 @@
   <!-- Izohlar -->
   <div class="row justify-content-center">
     <div class="col-lg-9">
-      <h4 class="mb-3">📬 Fikrlar</h4>
+      <h4 class="mb-3">📬 {% blocktrans %}Fikrlar{% endblocktrans %}</h4>
       {% if comments %}
         {% for comment in comments %}
         <div class="border-start border-3 border-success ps-3 mb-3 bg-light p-3 rounded">
@@ -55,7 +55,7 @@
         </div>
         {% endfor %}
       {% else %}
-        <p class="text-muted">Hozircha izohlar mavjud emas.</p>
+        <p class="text-muted">{% blocktrans %}Hozircha izohlar mavjud emas.{% endblocktrans %}</p>
       {% endif %}
     </div>
   </div>
@@ -63,7 +63,7 @@
   <!-- Izoh formasi -->
   <div class="row justify-content-center mt-4">
     <div class="col-lg-9">
-      <h5 class="mb-3">✍️ Izoh qoldiring</h5>
+      <h5 class="mb-3">✍️ {% blocktrans %}Izoh qoldiring{% endblocktrans %}</h5>
       <form method="post" class="border p-4 rounded shadow-sm bg-white">
         {% csrf_token %}
         <div class="mb-3">
@@ -76,14 +76,14 @@
           {{ form.text }}
           {{ form.text.errors }}
         </div>
-        <button type="submit" class="btn btn-success">Izoh yuborish</button>
+        <button type="submit" class="btn btn-success">{% blocktrans %}Izoh yuborish{% endblocktrans %}</button>
       </form>
     </div>
   </div>
 
   <!-- Qaytish tugmasi -->
   <div class="text-center mt-5">
-    <a href="{% url 'news_list' %}" class="btn btn-outline-secondary">← Orqaga qaytish</a>
+    <a href="{% url 'news_list' %}" class="btn btn-outline-secondary">← {% blocktrans %}Orqaga qaytish{% endblocktrans %}</a>
   </div>
 </div>
 {% endblock %}

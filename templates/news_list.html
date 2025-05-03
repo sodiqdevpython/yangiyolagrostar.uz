@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load i18n %}
 {% block content %}
 <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
     <a href="#" class="navbar-brand d-flex d-lg-none">
@@ -10,19 +10,19 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav mx-auto py-0">
-            <a href="{% url 'home' %}" class="nav-item nav-link active">Asosiy</a>
-            <a href="{% url 'home' %}" class="nav-item nav-link">Biz haqimizda</a>
-            <a href="{% url 'home' %}" class="nav-item nav-link">Xizmatlar</a>
-            <a href="{% url 'home' %}" class="nav-item nav-link">Afzalliklar</a>
-            <a href="{% url 'home' %}" class="nav-item nav-link">Mahsulotlar</a>
-            <a href="{% url 'news_list' %}" class="nav-item nav-link">Yangiliklar</a>
-            <a href="{% url 'home' %}" class="nav-item nav-link">Bog'lanish</a>
-        </div>
+      <div class="navbar-nav mx-auto py-0">
+        <a href="{% url 'home' %}" class="nav-item nav-link active">{% blocktrans %}Asosiy{% endblocktrans %}</a>
+        <a href="{% url 'home' %}" class="nav-item nav-link">{% blocktrans %}Biz haqimizda{% endblocktrans %}</a>
+        <a href="{% url 'home' %}" class="nav-item nav-link">{% blocktrans %}Xizmatlar{% endblocktrans %}</a>
+        <a href="{% url 'home' %}" class="nav-item nav-link">{% blocktrans %}Afzalliklar{% endblocktrans %}</a>
+        <a href="{% url 'home' %}" class="nav-item nav-link">{% blocktrans %}Mahsulotlar{% endblocktrans %}</a>
+        <a href="{% url 'news_list' %}" class="nav-item nav-link">{% blocktrans %}Yangiliklar{% endblocktrans %}</a>
+        <a href="{% url 'home' %}" class="nav-item nav-link">{% blocktrans %}Bog'lanish{% endblocktrans %}</a>
+      </div>
     </div>
 </nav>
 <div class="container py-5">
-  <h2 class="text-center mb-4">So‘nggi yangiliklar</h2>
+  <h2 class="text-center mb-4">{% blocktrans %}So‘nggi yangiliklar{% endblocktrans %}</h2>
   
   <div class="row">
     {% for item in page_obj %}
@@ -33,7 +33,7 @@
           <h5 class="card-title">{{ item.title|truncatechars:60 }}</h5>
           <p class="card-text text-muted">{{ item.text|truncatechars:100 }}</p>
           <div class="mt-auto">
-            <a href="{% url 'news_detail' slug=item.slug %}" class="btn btn-outline-success btn-sm">Batafsil</a>
+            <a href="{% url 'news_detail' slug=item.slug %}" class="btn btn-outline-success btn-sm">{% blocktrans %}Batafsil{% endblocktrans %}</a>
           </div>
         </div>
         <div class="card-footer text-muted small">
@@ -49,11 +49,11 @@
     <ul class="pagination justify-content-center">
       {% if page_obj.has_previous %}
       <li class="page-item">
-        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo; Oldingi</a>
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo; {% blocktrans %}Oldingi{% endblocktrans %}</a>
       </li>
       {% else %}
       <li class="page-item disabled">
-        <span class="page-link">&laquo; Oldingi</span>
+        <span class="page-link">&laquo; {% blocktrans %}Oldingi{% endblocktrans %}</span>
       </li>
       {% endif %}
 
@@ -67,11 +67,11 @@
 
       {% if page_obj.has_next %}
       <li class="page-item">
-        <a class="page-link" href="?page={{ page_obj.next_page_number }}">Keyingi &raquo;</a>
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}">{% blocktrans %}Keyingi{% endblocktrans %} &raquo;</a>
       </li>
       {% else %}
       <li class="page-item disabled">
-        <span class="page-link">Keyingi &raquo;</span>
+        <span class="page-link">{% blocktrans %}Keyingi{% endblocktrans %} &raquo;</span>
       </li>
       {% endif %}
     </ul>

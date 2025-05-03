@@ -1,10 +1,11 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Yangiyo'l Agrostar</title>
+    <title>{% blocktrans %}Yangiyo'l Agrostar{% endblocktrans %}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Yangi yo'l agro star" name="keywords">
     <meta content="Yangi yo'l agro star" name="description">
@@ -32,33 +33,54 @@
 
 <body>
     <!-- Topbar Start -->
-    <div class="container-fluid px-5 d-none d-lg-block">
+    <div class="container-fluid px-5 d-none d-lg-block bg-light border-bottom">
         <div class="row gx-5 py-3 align-items-center">
+            <!-- Phone Number -->
             <div class="col-lg-3">
-                <div class="d-flex align-items-center justify-content-start">
-                    <i class="bi bi-phone-vibrate fs-1 text-primary me-2"></i>
-                    <h2 class="mb-0">+998 95 171 76 96</h2>
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
+                    <h5 class="mb-0">+998 95 171 76 96</h5>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="d-flex align-items-center justify-content-center">
-                    <a href="index.html" class="navbar-brand ms-lg-5">
-                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">Yangiyo'l</span> Agrostar</h1>
-                    </a>
-                </div>
+    
+            <!-- Brand Logo (Centered) -->
+            <div class="col-lg-5 text-center">
+                <a href="index.html" class="navbar-brand">
+                    <h1 class="m-0 display-5 text-primary">
+                        <span class="text-secondary">Yangiyo'l</span> Agrostar
+                    </h1>
+                </a>
             </div>
-            
-              
-            <div class="col-lg-3">
-                <div class="d-flex align-items-center justify-content-end">
-                    <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-telegram"></i></a>
-                    <a class="btn btn-primary btn-square rounded-circle" href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+    
+            <!-- Language Selector (Compact) -->
+            <div class="col-lg-1 text-end">
+                <form action="{% url 'set_language' %}" method="post" class="d-flex align-items-center">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                    <select name="language" class="form-select form-select-sm me-1">
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                {{ language.code }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                    <input type="submit" class="btn btn-sm btn-outline-primary px-2" value="OK">
+                </form>
+            </div>
+    
+            <!-- Social Icons -->
+            <div class="col-lg-3 text-end">
+                <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-telegram"></i></a>
+                <a class="btn btn-primary btn-square rounded-circle" href="#"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </div>
+    
     {% block content %}
     {% endblock content %}
 <!-- JavaScript Libraries -->

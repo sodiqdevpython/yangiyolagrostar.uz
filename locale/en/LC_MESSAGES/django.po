@@ -1,0 +1,235 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-03 11:34+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\templates\base.html:8
+msgid "Yangiyo'l Agrostar"
+msgstr "Yangiyo'l Agrostar"
+
+#: .\templates\index.html:15 .\templates\news_detail.html:14
+#: .\templates\news_list.html:14
+msgid "Asosiy"
+msgstr "Home"
+
+#: .\templates\index.html:16 .\templates\news_detail.html:15
+#: .\templates\news_list.html:15
+msgid "Biz haqimizda"
+msgstr "About Us"
+
+#: .\templates\index.html:17 .\templates\news_detail.html:16
+#: .\templates\news_list.html:16
+msgid "Xizmatlar"
+msgstr "Services"
+
+#: .\templates\index.html:18 .\templates\news_detail.html:17
+#: .\templates\news_list.html:17
+msgid "Afzalliklar"
+msgstr "Advantages"
+
+#: .\templates\index.html:19 .\templates\index.html:172
+#: .\templates\news_detail.html:18 .\templates\news_list.html:18
+msgid "Mahsulotlar"
+msgstr "Products"
+
+#: .\templates\index.html:20 .\templates\index.html:226
+#: .\templates\news_detail.html:19 .\templates\news_list.html:19
+msgid "Yangiliklar"
+msgstr "News"
+
+#: .\templates\index.html:21 .\templates\index.html:93
+#: .\templates\news_detail.html:20 .\templates\news_list.html:20
+msgid "Bog'lanish"
+msgstr "Contact"
+
+#: .\templates\index.html:87
+msgid "Bizning xizmatlar"
+msgstr "Our Services"
+
+#: .\templates\index.html:88
+msgid "Biz taklif qiladigan xizmatlar"
+msgstr "Services We Offer"
+
+#: .\templates\index.html:90
+msgid ""
+"Dehqon va fermerlar uchun urug‘, o‘g‘it, ko‘chat hamda agrotexnik "
+"maslahatlar taqdim etamiz.\n"
+"                        Mahsulotlarni yig‘ib olish, muzlatish, qadoqlash va "
+"eksportga tayyorlashda to‘liq ko‘mak beramiz.\n"
+"                        Imtiyozli kreditlar, malakali agronomlar yordami va "
+"barqaror sotuv bozorlari bilan ta’minlaymiz."
+msgstr ""
+"We provide seeds, fertilizers, seedlings, and agrotechnical consultations for farmers.\n"
+"We offer full support in harvesting, freezing, packaging, and preparing products for export.\n"
+"We provide preferential loans, assistance from qualified agronomists, and stable sales markets."
+
+#: .\templates\index.html:114
+msgid "Afzalliklarimiz"
+msgstr "Our Advantages"
+
+#: .\templates\index.html:115
+msgid "Bizning ustunliklarimiz"
+msgstr "Our Strengths"
+
+#: .\templates\index.html:123
+msgid "Sifatli ko‘chat va urug‘lar"
+msgstr "High-Quality Seedlings and Seeds"
+
+#: .\templates\index.html:124
+msgid ""
+"Eksportbop navlar bilan ta’minlaymiz.\n"
+"                            Iqlimga mos tanlovlar agronomlar tavsiyasi "
+"asosida.\n"
+"                            O‘z vaqtida yetkazib berish kafolatlanadi."
+msgstr ""
+"We supply export-oriented varieties.\n"
+"Selections suitable for the climate based on agronomists' recommendations.\n"
+"Timely delivery is guaranteed."
+
+#: .\templates\index.html:132
+msgid "Ishonchli hamkorlik"
+msgstr "Reliable Partnership"
+
+#: .\templates\index.html:133
+msgid ""
+"Fermerlar bilan tizimli hamkorlik yo‘lga qo‘yilgan.\n"
+"                            Ko‘p yillik tajribaga ega mutaxassislar "
+"jamoasi.\n"
+"                            Natijadorlik va barqarorlikni birinchi o‘ringa "
+"qo‘yamiz."
+msgstr ""
+"Systematic cooperation with farmers has been established.\n"
+"A team of specialists with many years of experience.\n"
+"We prioritize efficiency and stability."
+
+#: .\templates\index.html:140
+msgid ""
+"Yangiyo‘l-Agro Star” kompaniyasi dehqonlar bilan bevosita ishlaydi, "
+"agrotexnologiyalarni joriy qiladi va xalqaro talabga javob beradigan "
+"mahsulotlarni yetishtirishga kafolat beradi. Har bir bosqichda sifat, "
+"nazorat va tajriba asosida harakat qilamiz. Biz fermerlar ishonchini va "
+"xalqaro bozorlar talabini birlashtiruvchi agroplatformamiz."
+msgstr ""
+"Yangiyo‘l-Agro Star company works directly with farmers, implements agrotechnologies, and guarantees the cultivation of products that meet international standards. At every stage, we act based on quality, control, and experience. We are an agro-platform that combines farmers' trust with international market demands."
+
+#: .\templates\index.html:149
+msgid "Zamonaviy agrotexnologiyalar"
+msgstr "Modern Agrotechnologies"
+
+#: .\templates\index.html:150
+msgid ""
+"Issiqxonalar, quyosh panellari va tomchilab sug‘orish kabi innovatsiyalar "
+"joriy qilinmoqda."
+msgstr ""
+"Innovations such as greenhouses, solar panels, and drip irrigation are being implemented."
+
+#: .\templates\index.html:157
+msgid "Agroxizmat va maslahat"
+msgstr "Agro Services and Consultation"
+
+#: .\templates\index.html:158
+msgid ""
+"Mahalliy agronomlar doimiy maslahat beradi.\n"
+"                            Parvarish va himoya bo‘yicha amaliy ko‘mak "
+"mavjud."
+msgstr ""
+"Local agronomists provide constant advice.\n"
+"Practical assistance is available for care and protection."
+
+#: .\templates\index.html:173
+msgid "Bizning mahsulotlarimiz"
+msgstr "Our Products"
+
+#: .\templates\index.html:196
+msgid "Jamoa"
+msgstr "Team"
+
+#: .\templates\index.html:197
+msgid "Bizning jamoamiz"
+msgstr "Our Team"
+
+#: .\templates\index.html:227
+msgid "Kompaniyamiz haqida oxirgi yangiliklar"
+msgstr "Latest News About Our Company"
+
+#: .\templates\index.html:251
+msgid "Biz bilan bog‘laning"
+msgstr "Contact Us"
+
+#: .\templates\index.html:252
+msgid "Manzil:"
+msgstr "Address:"
+
+#: .\templates\index.html:252
+msgid ""
+"Toshkent viloyati, Yangiyo‘l tumani, Gulbahor MFY, Sharof Rashidov ko‘chasi "
+"1-uy"
+msgstr ""
+"Tashkent region, Yangiyo‘l district, Gulbahor MFY, Sharof Rashidov street, house 1"
+
+#: .\templates\index.html:255
+msgid "Google Maps"
+msgstr "Google Maps"
+
+#: .\templates\index.html:259
+msgid "Bizga xabar yuboring"
+msgstr "Send Us a Message"
+
+#: .\templates\index.html:275
+msgid "Yuborish"
+msgstr "Send"
+
+#: .\templates\news_detail.html:32
+msgid "Nashr etilgan:"
+msgstr "Published:"
+
+#: .\templates\news_detail.html:46
+msgid "Fikrlar"
+msgstr "Comments"
+
+#: .\templates\news_detail.html:58
+msgid "Hozircha izohlar mavjud emas."
+msgstr "No comments available yet."
+
+#: .\templates\news_detail.html:66
+msgid "Izoh qoldiring"
+msgstr "Leave a Comment"
+
+#: .\templates\news_detail.html:79
+msgid "Izoh yuborish"
+msgstr "Submit Comment"
+
+#: .\templates\news_detail.html:86
+msgid "Orqaga qaytish"
+msgstr "Go Back"
+
+#: .\templates\news_list.html:25
+msgid "So‘nggi yangiliklar"
+msgstr "Latest News"
+
+#: .\templates\news_list.html:36
+msgid "Batafsil"
+msgstr "Read More"
+
+#: .\templates\news_list.html:52 .\templates\news_list.html:56
+msgid "Oldingi"
+msgstr "Previous"
+
+#: .\templates\news_list.html:70 .\templates\news_list.html:74
+msgid "Keyingi"
+msgstr "Next"

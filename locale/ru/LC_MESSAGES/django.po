@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-03 11:33+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+#: .\templates\base.html:8
+msgid "Янгиюль Агростар"
+msgstr ""
+
+msgid "Asosiy"
+msgstr "Главная"
+
+msgid "Biz haqimizda"
+msgstr "О нас"
+
+msgid "Xizmatlar"
+msgstr "Услуги"
+
+msgid "Afzalliklar"
+msgstr "Преимущества"
+
+msgid "Mahsulotlar"
+msgstr "Продукты"
+
+msgid "Yangiliklar"
+msgstr "Новости"
+
+msgid "Bog'lanish"
+msgstr "Контакты"
+
+msgid "Bizning xizmatlar"
+msgstr "Наши услуги"
+
+msgid "Biz taklif qiladigan xizmatlar"
+msgstr "Услуги, которые мы предлагаем"
+
+msgid ""
+"Dehqon va fermerlar uchun urug‘, o‘g‘it, ko‘chat hamda agrotexnik "
+"maslahatlar taqdim etamiz.\n"
+"                        Mahsulotlarni yig‘ib olish, muzlatish, qadoqlash va "
+"eksportga tayyorlashda to‘liq ko‘mak beramiz.\n"
+"                        Imtiyozli kreditlar, malakali agronomlar yordami va "
+"barqaror sotuv bozorlari bilan ta’minlaymiz."
+msgstr ""
+"Мы предоставляем семена, удобрения, саженцы и агротехнические консультации для фермеров.\n"
+"                        Полная поддержка при сборе, заморозке, упаковке и подготовке продукции к экспорту.\n"
+"                        Обеспечиваем льготными кредитами, квалифицированными агрономами и стабильными рынками сбыта."
+
+msgid "Afzalliklarimiz"
+msgstr "Наши преимущества"
+
+msgid "Bizning ustunliklarimiz"
+msgstr "Наши сильные стороны"
+
+msgid "Sifatli ko‘chat va urug‘lar"
+msgstr "Качественные саженцы и семена"
+
+msgid ""
+"Eksportbop navlar bilan ta’minlaymiz.\n"
+"                            Iqlimga mos tanlovlar agronomlar tavsiyasi "
+"asosida.\n"
+"                            O‘z vaqtida yetkazib berish kafolatlanadi."
+msgstr ""
+"Обеспечиваем экспортными сортами.\n"
+"                            Подбор, подходящий к климату, на основе рекомендаций агрономов.\n"
+"                            Гарантированная своевременная доставка."
+
+msgid "Ishonchli hamkorlik"
+msgstr "Надёжное партнёрство"
+
+msgid ""
+"Fermerlar bilan tizimli hamkorlik yo‘lga qo‘yilgan.\n"
+"                            Ko‘p yillik tajribaga ega mutaxassislar "
+"jamoasi.\n"
+"                            Natijadorlik va barqarorlikni birinchi o‘ringa "
+"qo‘yamiz."
+msgstr ""
+"Налажено системное сотрудничество с фермерами.\n"
+"                            Команда специалистов с многолетним опытом.\n"
+"                            В приоритете — эффективность и стабильность."
+
+msgid ""
+"Yangiyo‘l-Agro Star” kompaniyasi dehqonlar bilan bevosita ishlaydi, "
+"agrotexnologiyalarni joriy qiladi va xalqaro talabga javob beradigan "
+"mahsulotlarni yetishtirishga kafolat beradi. Har bir bosqichda sifat, "
+"nazorat va tajriba asosida harakat qilamiz. Biz fermerlar ishonchini va "
+"xalqaro bozorlar talabini birlashtiruvchi agroplatformamiz."
+msgstr ""
+"Компания «Янгийуль-Агро Стар» работает напрямую с фермерами, внедряет агротехнологии и гарантирует выращивание продукции, соответствующей международным стандартам. На каждом этапе мы действуем на основе качества, контроля и опыта. Мы — агроплатформа, объединяющая доверие фермеров и требования мировых рынков."
+
+msgid "Zamonaviy agrotexnologiyalar"
+msgstr "Современные агротехнологии"
+
+msgid ""
+"Issiqxonalar, quyosh panellari va tomchilab sug‘orish kabi innovatsiyalar "
+"joriy qilinmoqda."
+msgstr ""
+"Внедряются инновации, такие как теплицы, солнечные панели и капельное орошение."
+
+msgid "Agroxizmat va maslahat"
+msgstr "Агросервис и консультации"
+
+msgid ""
+"Mahalliy agronomlar doimiy maslahat beradi.\n"
+"                            Parvarish va himoya bo‘yicha amaliy ko‘mak "
+"mavjud."
+msgstr ""
+"Местные агрономы предоставляют постоянные консультации.\n"
+"                            Доступна практическая помощь по уходу и защите растений."
+
+msgid "Bizning mahsulotlarimiz"
+msgstr "Наша продукция"
+
+msgid "Jamoa"
+msgstr "Команда"
+
+msgid "Bizning jamoamiz"
+msgstr "Наша команда"
+
+msgid "Kompaniyamiz haqida oxirgi yangiliklar"
+msgstr "Последние новости о нашей компании"
+
+msgid "Biz bilan bog‘laning"
+msgstr "Свяжитесь с нами"
+
+msgid "Manzil:"
+msgstr "Адрес:"
+
+msgid ""
+"Toshkent viloyati, Yangiyo‘l tumani, Gulbahor MFY, Sharof Rashidov ko‘chasi "
+"1-uy"
+msgstr ""
+"Ташкентская область, Янгийульский район, МФЙ Гульбахор, улица Шарофа Рашидова, дом 1"
+
+msgid "Google Maps"
+msgstr "Google Карты"
+
+msgid "Bizga xabar yuboring"
+msgstr "Отправьте нам сообщение"
+
+msgid "Yuborish"
+msgstr "Отправить"
+
+msgid "Nashr etilgan:"
+msgstr "Опубликовано:"
+
+msgid "Fikrlar"
+msgstr "Комментарии"
+
+msgid "Hozircha izohlar mavjud emas."
+msgstr "Комментариев пока нет."
+
+msgid "Izoh qoldiring"
+msgstr "Оставьте комментарий"
+
+msgid "Izoh yuborish"
+msgstr "Отправить комментарий"
+
+msgid "Orqaga qaytish"
+msgstr "Вернуться назад"
+
+msgid "So‘nggi yangiliklar"
+msgstr "Последние новости"
+
+msgid "Batafsil"
+msgstr "Подробнее"
+
+msgid "Oldingi"
+msgstr "Предыдущая"
+
+msgid "Keyingi"
+msgstr "Следующая"
