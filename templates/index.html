@@ -32,7 +32,7 @@
             <div class="carousel-inner">
                 {% for home_back in home_background %}
                     <div class="carousel-item active">
-                        <img class="w-100" src="{{ home_back.image }}" alt="Image">
+                        <img class="w-100" src="{{ home_back.image.url }}" alt="Image">
                         <div class="carousel-caption top-0 bottom-0 start-0 end-0 d-flex flex-column align-items-center justify-content-center">
                             <div class="text-start p-5" style="max-width: 900px;">
                                 <h1 class="display-1 text-white mb-md-4">{{ home_back.title }}</h1>
@@ -63,7 +63,7 @@
                 <div class="row gx-5">
                     <div class="col-lg-6 mb-5 mb-lg-0">
                         <div class="d-flex border border-5 border-primary border-bottom-0">
-                            <img class="img-fluid mt-auto mx-auto" src="{{ h.image }}">
+                            <img class="img-fluid mt-auto mx-auto" src="{{ h.image.url }}">
                         </div>
                     </div>
                     <div class="col-lg-6 pb-5">
@@ -178,7 +178,7 @@
                 {% for i in products %}
                     <div class="pb-5">
                         <div class="product-item position-relative bg-white d-flex flex-column text-center">
-                            <img style="object-fit: contain; height: 128px;" class="img-fluid mb-4" src="{{ i.image }}" alt="">
+                            <img style="object-fit: contain; height: 128px;" class="img-fluid mb-4" src="{{ i.image.url }}" alt="">
                             <h6 class="mb-3">{{ i.title }}</h6>
                         </div>
                     </div>
