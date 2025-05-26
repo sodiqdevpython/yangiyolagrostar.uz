@@ -186,3 +186,7 @@ msgstr "Предыдущая"
 
 msgid "Keyingi"
 msgstr "Следующая"
+
+msgid "Tomorqa maktabi"
+msgstr "Домашнее обучение"
+

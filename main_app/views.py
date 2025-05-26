@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import HomeBackground, HomeAboutUs, HomeServices, Products, Worker, News
+from .models import HomeBackground, HomeAboutUs, HomeServices, Products, Worker, News, HtmlArticle
 from .forms import ContactForm, CommentForm
 from django.core.paginator import Paginator
-
+from urllib.parse import quote
 
 def home(request):
     home_background = HomeBackground.objects.all()
@@ -63,3 +63,23 @@ def news_detail(request, slug):
         'comments': comments,
     }
     return render(request, 'news_detail.html', context)
+
+def html_article_list(request):
+    paginator = Paginator(HtmlArticle.objects.all(), 6)
+    page_obj = paginator.get_page(request.GET.get("page"))
+    return render(request, "article_list.html", {"page_obj": page_obj})
+
+def html_article_detail(request, slug):
+    article = get_object_or_404(HtmlArticle, slug=slug)
+
+    # .html faylni o‘qib, matn sifatida render qilish
+    try:
+        with open(article.html_file.path, "r", encoding="utf-8") as f:
+            html_content = f.read()
+    except Exception as e:
+        html_content = f"<p>Xatolik: {e}</p>"
+
+    return render(request, "article_detail.html", {
+        "article": article,
+        "html_content": html_content
+    })

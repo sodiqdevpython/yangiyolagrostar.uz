@@ -1,8 +1,18 @@
 from django.contrib import admin
 from .models import (
-    HomeBackground, HomeAboutUs, HomeServices,
+    HomeBackground, HomeAboutUs, HomeServices,HtmlArticle,
     Products, Worker, News, Contact, Comment, NewsImage
 )
+
+@admin.register(HtmlArticle)
+class HtmlArticleAdmin(admin.ModelAdmin):
+    list_display = ("title", "created", "updated")
+    search_fields = ("title",)
+    list_filter = ("created",)
+    ordering = ("-created",)
+
+    # Slug maydonini avtomatik to‘ldirish
+    prepopulated_fields = {"slug": ("title",)}
 
 @admin.register(HomeBackground)
 class HomeBackgroundAdmin(admin.ModelAdmin):

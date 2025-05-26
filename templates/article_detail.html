@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 px-4">
+  <a href="{% url 'home' %}" class="navbar-brand">Yangiyo‘l Agrostar</a>
+</nav>
+
+<div class="container py-5">
+  <h2 class="fw-bold mb-3">{{ article.title }}</h2>
+  <p class="text-muted">{% blocktrans %}Nashr etilgan:{% endblocktrans %} {{ article.created|date:"d-m-Y" }}</p>
+  <hr>
+
+  <!-- 🔽 HTML fayl kontenti – sayt qolibi ichida chiqadi -->
+  <div class="fs-5" style="line-height: 1.8;">
+    {{ html_content|safe }}
+  </div>
+
+  <div class="text-center mt-3">
+    <a href="{% url 'article_list' %}" class="btn btn-outline-secondary">
+      ← {% blocktrans %}Orqaga qaytish{% endblocktrans %}
+    </a>
+  </div>
+</div>
+{% endblock %}
