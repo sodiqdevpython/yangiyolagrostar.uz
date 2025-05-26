@@ -131,8 +131,8 @@ MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS  = [ BASE_DIR / 'static' ]
-# STATIC_ROOT = BASE_DIR / 'static'
+# STATICFILES_DIRS  = [ BASE_DIR / 'static' ]
+STATIC_ROOT = BASE_DIR / 'static'
 
 MEDIA_URL = 'media/media/'
 MEDIA_ROOT = BASE_DIR / 'media'

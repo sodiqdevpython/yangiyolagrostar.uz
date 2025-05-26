@@ -233,3 +233,6 @@ msgstr "Previous"
 #: .\templates\news_list.html:70 .\templates\news_list.html:74
 msgid "Keyingi"
 msgstr "Next"
+
+msgid "Tomorqa maktabi"
+msgstr "Homeschool"

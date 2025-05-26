@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
+    <a href="#" class="navbar-brand d-flex d-lg-none">
+        <h1 class="m-0 display-4 text-secondary"><span class="text-white">Yangiyo'l</span>Agrostar</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav mx-auto py-0">
+        <a href="{% url 'home' %}" class="nav-item nav-link active">{% blocktrans %}Asosiy{% endblocktrans %}</a>
+        <a href="{% url 'home' %}" class="nav-item nav-link">{% blocktrans %}Biz haqimizda{% endblocktrans %}</a>
+        <a href="{% url 'home' %}" class="nav-item nav-link">{% blocktrans %}Xizmatlar{% endblocktrans %}</a>
+        <a href="{% url 'home' %}" class="nav-item nav-link">{% blocktrans %}Afzalliklar{% endblocktrans %}</a>
+        <a href="{% url 'home' %}" class="nav-item nav-link">{% blocktrans %}Mahsulotlar{% endblocktrans %}</a>
+        <a href="{% url 'news_list' %}" class="nav-item nav-link">{% blocktrans %}Yangiliklar{% endblocktrans %}</a>
+        <a href="{% url 'article_list' %}" class="nav-item nav-link">{% blocktrans %}Tomorqa maktabi{% endblocktrans %}</a>
+        <a href="{% url 'home' %}" class="nav-item nav-link">{% blocktrans %}Bog'lanish{% endblocktrans %}</a>
+      </div>
+    </div>
+</nav>
+<div class="container py-5">
+  <h2 class="text-center mb-4">{% blocktrans %}Maqolalar ro‘yxati{% endblocktrans %}</h2>
+
+  <div class="row">
+    {% for article in page_obj %}
+    <div class="col-md-4 d-flex align-items-stretch mb-4">
+      <div class="card shadow-sm border-0 h-100">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ article.title }}</h5>
+          <p class="card-text text-muted">
+            {{ article.get_html_content|truncatechars:100|safe }}
+          </p>
+          <div class="mt-auto">
+            <a href="{% url 'article_detail' article.slug %}" class="btn btn-outline-success btn-sm">
+              {% blocktrans %}Batafsil{% endblocktrans %}
+            </a>
+          </div>
+        </div>
+        <div class="card-footer text-muted small">
+          {{ article.created|date:"d-m-Y" }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Pagination -->
+  <nav class="mt-4">
+    <ul class="pagination justify-content-center">
+      {% if page_obj.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo; {% blocktrans %}Oldingi{% endblocktrans %}</a>
+      </li>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+      {% if num == page_obj.number %}
+      <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+      {% else %}
+      <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+      {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}">{% blocktrans %}Keyingi{% endblocktrans %} &raquo;</a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+</div>
+{% endblock %}

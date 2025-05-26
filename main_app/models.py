@@ -1,5 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
+import html
+import bleach
+from django.utils.text import slugify
+import os
+from django.utils import timezone
+import base64, mammoth
 
 class HomeBackground(models.Model):
     title = models.CharField(max_length=64, verbose_name='Sarlavha')
@@ -114,3 +120,37 @@ class NewsImage(models.Model):
 
     def __str__(self):
         return f"{self.news.title} - image"
+
+def article_upload_to(instance, filename):
+    return os.path.join("articles", timezone.now().strftime("%Y/%m/%d"), filename)
+
+class HtmlArticle(models.Model):
+    title = models.CharField("Sarlavha", max_length=256, unique=True)
+    slug = models.SlugField(unique=True, blank=True)
+    html_file = models.FileField("HTML hujjat", upload_to=article_upload_to)
+
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-created"]
+        verbose_name = "HTML maqola"
+        verbose_name_plural = "HTML maqolalar"
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+
+    def get_html_content(self):
+        """.html faylni matn sifatida o‘qish"""
+        if not self.html_file:
+            return ""
+        try:
+            with open(self.html_file.path, "r", encoding="utf-8") as f:
+                return f.read()
+        except Exception as e:
+            return f"<p>Xatolik yuz berdi: {e}</p>"
