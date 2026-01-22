@@ -73,6 +73,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+CSRF_TRUSTED_ORIGINS = [
+    'http://38.242.157.96:8080',
+    'http://yangiyolagrostar.uz',
+    'https://yangiyolagrostar.uz',
+]
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
